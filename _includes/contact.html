@@ -1,0 +1,18 @@
+<div class="docs-section" id="contact">
+  <div class="docs-header">Contact</div>
+  The online GAPS seminar is organised by:<br><br>
+  <div class="row">
+    {% assign items = site.data.credits | sort: "last" %}
+    <ul class= "four columns">
+      {% for item in items %}
+      <li>
+	      <b>{{ item.first }} {{ item.last }}</b>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <p>
+      You may contact them at <a href="mailto:onlinegaps@gmail.com"><b>onlinegaps@gmail.com</b></a> to suggest talks, or to join the google group.
+  </p>
+  <!-- Other Social Media stuff -->
+</div>

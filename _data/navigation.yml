@@ -1,0 +1,8 @@
+- name: Schedule
+  link: schedule
+- name: Instructions
+  link: instructions
+- name: Past Talks
+  link: past
+- name: Contact
+  link: contact

@@ -1,0 +1,30 @@
+<div class="docs-section" id="schedule">
+  <div class="docs-header">Schedule</div>
+  <div class="docs-subsection">
+    <div class="docs-subheader">Upcoming talk</div>
+    {% assign now_ts = "now" | date: "%s" | plus: 0 %}
+    {% assign upcoming_talk = nil %}
+    {% assign next_ts = 9999999999 %}
+    {% for t in site.talks %}
+      {% assign t_ts = t.datetime | date: "%s" | plus: 0 %}
+      {% if t_ts >= now_ts and t_ts < next_ts %}
+        {% assign next_ts = t_ts %}
+        {% assign upcoming_talk = t %}
+      {% endif %}
+    {% endfor %}
+    <div class="talk-content">
+        {% if upcoming_talk %}
+            <b>{{ upcoming_talk.title }}</b><br>
+            <b>{{ upcoming_talk.speaker.name }}</b> (<i>{{ upcoming_talk.speaker.affiliation }}</i>)<br>
+            {{ upcoming_talk.datetime | date: "%A, %B %d, %Y at %H:%M" }}<br>
+            {{ upcoming_talk.content }}
+        {% else %}
+            No upcoming talks scheduled.
+        {% endif %}
+    </div>
+  </div>
+  <div class="docs-subsection">
+    <div class="docs-subheader">Calendar of Talks</div>
+    <iframe class="calendar-view" src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Europe%2FBerlin&showPrint=0&mode=AGENDA&title=Online%20GAPS&src=b25saW5lZ2Fwc0BnbWFpbC5jb20&color=%23039be5" style="border:solid 1px #777" frameborder="0" scrolling="no"></iframe>
+  </div>
+</div>

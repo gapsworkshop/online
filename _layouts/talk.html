@@ -1,0 +1,9 @@
+---
+layout: default
+---
+<div class="talk-content">
+    <b>{{ title }}</b><br>
+    <b>{{ speaker.name }}</b> (<i>{{ speaker.affiliation }}</i>)<br>
+    {{ datetime | date: "%A, %B %d, %Y at %H:%M" }}<br>
+    {{ content }}
+</div>
