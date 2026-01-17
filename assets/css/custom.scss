@@ -8,7 +8,7 @@ $title-color: #ffffff;
 body {
     font-family: "Lora", serif; }
 a {
-    color: $text-color;
+    color: darken($header-color, 10%);
     text-decoration: none; }
 a:hover {
     color: $header-color;

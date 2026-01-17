@@ -1,8 +1,8 @@
 - name: Schedule
-  link: schedule
+  link: "/#schedule"
 - name: Instructions
-  link: instructions
+  link: "/#instructions"
 - name: Past Talks
-  link: past
+  link: "/past-talks"
 - name: Contact
-  link: contact
+  link: "/#contact"

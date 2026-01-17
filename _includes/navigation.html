@@ -4,7 +4,7 @@
 	<ul class="menu-list bar-menu" id="full-nav">
           {% for item in site.data.navigation %}
           <li class="navbar-item">
-	    <a class="navbar-link" href="#{{ item.link }}">{{ item.name }}</a>
+		      <a class="navbar-link" href="{{ site.baseurl }}{{ item.link }}">{{ item.name }}</a>
           </li>
           {% endfor %}
 	</ul>
@@ -15,7 +15,7 @@
               <ul class="hamburger-list">
 		{% for item in site.data.navigation %}
 		<li class="hamburger-item">
-		  <a class="hamburger-link" href="#{{ item.link }}">{{ item.name }}</a>
+			<a class="hamburger-link" href="{{ site.baseurl }}{{ item.link }}">{{ item.name }}</a>
 		</li>
 		{% endfor %}
               </ul>
