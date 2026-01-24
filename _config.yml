@@ -27,6 +27,7 @@ baseurl: "/online" # the subpath of your site, e.g. /blog
 url: "https://gapsworkshop.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 domain: gapsworkshop.github.io
 cssurl: "/assets/css"
+imageurl: "/assets/images"
 jsurl: "/assets/js"
 sass:
   style: compressed

@@ -1,9 +1,13 @@
 ---
 ---
 $text-color: #222222;
-$tab-color: #39e0b2;
-$tab-hover-color: #1fc598;
-$header-color: #1fc598;
+// Gaps workshop palette 
+// $tab-color: #39e0b2;
+// $tab-hover-color: #1fc598;
+// $header-color: #1fc598;
+$tab-color: #839cb7;
+$tab-hover-color: #5E8ABA;
+$header-color: #5E8ABA;
 $title-color: #ffffff;
 body {
     font-family: "Lora", serif; }
@@ -28,14 +32,22 @@ ol, ul {
     display: block;
     padding-left: 1rem;
     margin: 1rem auto 3rem 0;}
-.poster {
+  .poster {
     position: relative;
-    height: 5vh;
+    height: 30vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;}
+    text-align: center;
+    background: url('{{ site.imageurl | relative_url }}/gapsboard.png') center center / cover no-repeat; 
+    border: 3px solid #ebebeb;
+    border-radius: 10px;
+    box-shadow: inset rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, 
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    }
+
+
 .logo {
     font-family: "Libre Baskerville", serif;
     font-size: 1.6rem;
@@ -48,10 +60,17 @@ ol, ul {
     color: $header-color;
 }
 .title {
-    font-size: 3.2rem;
+    font-size: 4rem;
     letter-spacing: .1rem;
     font-weight: 900;
-    color: $header-color; }
+    color: $title-color; }
+.title-small,
+.date,
+.place {
+    font-size: 3rem;
+    letter-spacing: 0.2rem; 
+    font-weight: 900;
+    color: $title-color; }
 .value-prop {
   margin-top: 1rem; }
 .value-props {
@@ -303,11 +322,13 @@ button.button-primary.active, {
   .title-small,
   .date,
   .place {
-      font-size: 2.5rem;
-      letter-spacing: 0.2rem; }
-  .title {
       font-size: 5rem;
-      letter-spacing: 0.2rem; }
+      letter-spacing: 0.2rem; 
+      color: $title-color; }
+  .title {
+      font-size: 7rem;
+      letter-spacing: 0.2rem; 
+      color: $title-color; }
 .navbar + .docs-section {
     border-top-width: 0; }
 .hamburger-menu {
