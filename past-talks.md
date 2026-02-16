@@ -6,6 +6,9 @@ title: Past Talks
 
 <div class="docs-section no-top-border" id="past">
   <div class="docs-header">Past Talks</div>
+  <p>
+      Missed a talk? A link to the recording (if available) and other relevant resources will be posted here a few days after each talk.
+  </p>
 {% assign now_ts = "now" | date: "%s" | plus: 0 %}
 {% assign talks = site.talks | sort: "datetime" | reverse %}
 {% assign filtered_talks = "" | split: "" %}
