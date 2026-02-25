@@ -16,61 +16,38 @@ $(document).ready(function () {
 	// Tab click behavior
 	// $('.button-primary').on('click', tabClick);
 
+	addLocalDateTime();
         resize();
-	
-	// Auto-select today's tab based on data-date
-	// defaultProgram();
     }
 
-    /*function tabClick(e) {
-	const $button = $(e.currentTarget);
-	const dayId = $button.data('dayid');
-	$('.button-primary').removeClass('active');
-	$('.days-program').removeClass('active');
-	$button.addClass('active');
-	$('#' + dayId).addClass('active');
-    }*/
-
-    /*function defaultProgram() {
-	const today = new Date().toLocaleDateString('en-CA');
-	let $matchedButton = null;
-	let earliestDate = null;
-	let latestDate = null;
-	let $firstButton = null;
-	let $lastButton = null;
-
-	$('.button-primary').each(function (index) {
-	    const $btn = $(this);
-	    const date = $btn.data('date');
-
-	    if (index === 0) {
-		$firstButton = $btn;
-		earliestDate = date;
-	    }
-
-	    $lastButton = $btn; // Will end up as the last item
-	    latestDate = date;
-
-	    if (date === today) {
-		$matchedButton = $btn;
-	    }
-	});
-
-	if ($matchedButton) {
-	    $matchedButton.trigger('click');
-	} else if (today < earliestDate) {
-	    $firstButton.trigger('click');
-	} else if (today > latestDate) {
-	    $lastButton.trigger('click');
-	}
-    }*/
-    
     function resize() {
 	closeHamburger();
         $body.removeClass('has-docked-nav');
         navOffsetTop = $navbar.offset().top;
         onScroll();
 	
+    }
+
+    function addLocalDateTime() {
+	$(".upcoming-talk-time[data-utc]").each(function () {
+	    if (this.dataset.localAppended === "true") return;
+	    var utcDateTime = new Date(this.dataset.utc.replace(" ", "T") + ":00Z");
+	    if (isNaN(utcDateTime)) return;
+	    var localDate = utcDateTime.toLocaleDateString("en-US", {
+		weekday: "long",
+		month: "long",
+		day: "2-digit",
+		year: "numeric"
+	    });
+	    var localTime = utcDateTime.toLocaleTimeString("en-US", {
+		hour: "2-digit",
+		minute: "2-digit",
+		hour12: false,
+		timeZoneName: "short"
+            });
+            this.textContent += "  (" + localDate + " at " + localTime + ")";
+            this.dataset.localAppended = "true";
+	});
     }
 
     function smoothScroll(e) {

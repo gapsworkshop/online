@@ -2,7 +2,6 @@
   <div class="docs-header">Schedule</div>
   <div class="docs-subsection">
     <div class="docs-subheader">Upcoming talk</div>
-    <p>The time of the talk is given in UTC. </p>
     {% assign now_ts = "now" | date: "%s" | plus: 0 %}
     {% assign upcoming_talk = nil %}
     {% assign next_ts = 9999999999 %}
@@ -17,7 +16,7 @@
         {% if upcoming_talk %}
             <b>{{ upcoming_talk.title }}</b><br>
             <b>{{ upcoming_talk.speaker.name }}</b> (<i>{{ upcoming_talk.speaker.affiliation }}</i>)<br>
-            {{ upcoming_talk.datetime | date: "%A, %B %d, %Y at %H:%M" }}<br>
+            <span class="upcoming-talk-time" data-utc="{{ upcoming_talk.datetime }}">{{ upcoming_talk.datetime | date: "%A, %B %d, %Y at %H:%M" }} UTC</span><br>
             {{ upcoming_talk.content }}
         {% else %}
             No upcoming talks scheduled.
@@ -26,6 +25,7 @@
   </div>
   <div class="docs-subsection">
     <div class="docs-subheader">Calendar of Talks</div>
-    <iframe class="calendar-view" src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Europe%2FBerlin&showPrint=0&mode=AGENDA&title=Online%20GAPS&src=b25saW5lZ2Fwc0BnbWFpbC5jb20&color=%23039be5" style="border:solid 1px #777" frameborder="0" scrolling="no"></iframe>
+    <p>Please note that all <b>times are given in UTC</b>. You may consider adding the calendar (or a specific event) to your Google account; in that case, the times in your calendar will be adjusted to your time zone setting.</p>
+    <iframe class="calendar-view" src="https://calendar.google.com/calendar/embed?height=600&wkst=1&showPrint=0&mode=AGENDA&title=Online%20GAPS&src=b25saW5lZ2Fwc0BnbWFpbC5jb20&ctz=UTC&color=%23039be5" style="border:solid 1px #777" frameborder="0" scrolling="no"></iframe>
   </div>
 </div>
