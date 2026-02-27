@@ -34,7 +34,7 @@ sass:
 collections:
   talks:
     output: false # set true for a page per talk and set permalink format
-timezone: Europe/Berlin
+timezone: UTC
 
 # Exclude from processing.
 # The following items will not be processed, by default.

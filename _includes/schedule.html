@@ -10,10 +10,10 @@
       {% if t_ts >= now_ts and t_ts < next_ts %}
         {% assign next_ts = t_ts %}
         {% assign upcoming_talk = t %}
-      {% endif %}
-    {% endfor %}
+				      {% endif %}
+				      {% endfor %}
     <div class="talk-content">
-        {% if upcoming_talk %}
+      {% if upcoming_talk %}
             <b>{{ upcoming_talk.title }}</b><br>
             <b>{{ upcoming_talk.speaker.name }}</b> (<i>{{ upcoming_talk.speaker.affiliation }}</i>)<br>
             <span class="upcoming-talk-time" data-utc="{{ upcoming_talk.datetime }}">{{ upcoming_talk.datetime | date: "%A, %B %d, %Y at %H:%M" }} UTC</span><br>
