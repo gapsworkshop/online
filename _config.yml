@@ -36,6 +36,8 @@ collections:
     output: false # set true for a page per talk and set permalink format
 timezone: UTC
 
+google: "v4JhPdP7T5fUY9QmdbUhBVI2ElJRfZqYM3EPmwodQrQ"
+
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
